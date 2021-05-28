@@ -9,11 +9,38 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
         title: Text('首页'),
+        centerTitle: true,
+        leading: IconButton(
+          icon: const Icon(Icons.people, size: 30,),
+          onPressed: () {
+            _scaffoldKey.currentState.openDrawer();
+          }
+        ),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.menu, size: 30,),
+            onPressed: () {
+              _scaffoldKey.currentState.openEndDrawer();
+            }
+          ),
+        ],
+      ),
+      drawer: Drawer(
+        child: Center(
+          child: Text('drawer'),
+        ),
+      ),
+      endDrawer: Drawer(
+        child: Center(
+          child: Text('endDrawer'),
+        ),
       ),
       body: ListView.builder(
         itemCount: 20,
@@ -51,11 +78,11 @@ class _HomePageState extends State<HomePage> {
                   children: <Widget>[
                     ClipRRect(
                       borderRadius: BorderRadius.circular(5),
-                      child: Image.network('https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2640611704.webp', width: 100,),
+                      child: Image.network('https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2640611704.webp', width: 100, height: 148,),
                     ),
                     Expanded(
                       child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 15),
+                        padding: EdgeInsets.symmetric(horizontal: 8),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
