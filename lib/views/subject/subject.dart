@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/store/app_store.dart';
+import '../../store/app_store.dart';
 import 'package:provider/provider.dart';
 
 class SubjectPage extends StatefulWidget {

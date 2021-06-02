@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:myapp/components/dashed_line.dart';
-import 'package:myapp/components/star_rating.dart';
+import '../../components/dashed_line.dart';
+import '../../components/star_rating.dart';
 
 class HomePage extends StatefulWidget {
   @override
