@@ -17,12 +17,6 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text('首页'),
         centerTitle: true,
-        leading: IconButton(
-          icon: const Icon(Icons.people, size: 30,),
-          onPressed: () {
-            _scaffoldKey.currentState.openDrawer();
-          }
-        ),
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.menu, size: 30,),
@@ -31,11 +25,6 @@ class _HomePageState extends State<HomePage> {
             }
           ),
         ],
-      ),
-      drawer: Drawer(
-        child: Center(
-          child: Text('drawer'),
-        ),
       ),
       endDrawer: Drawer(
         child: Center(

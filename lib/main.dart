@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'router/router.dart';
 import 'views/mall/mall.dart';
 import 'views/profile/profile.dart';
 import 'views/group/group.dart';
@@ -16,12 +17,16 @@ class MyApp extends StatelessWidget {
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
       ),
-      home: MyStackPage()
+      routes: AppRouter.routers,
+      initialRoute: AppRouter.initialRoute,
+      // home: MyStackPage()
     );
   }
 }
 
 class MyStackPage extends StatefulWidget {
+  static final String routeName = '/myStackPage';
+
   const MyStackPage({Key key}) : super(key: key);
 
   @override
@@ -29,7 +34,7 @@ class MyStackPage extends StatefulWidget {
 }
 
 class _MyStackPageState extends State<MyStackPage> {
-  int _currentIndex = 1;
+  int _currentIndex = 0;
   
   @override
   Widget build(BuildContext context) {
