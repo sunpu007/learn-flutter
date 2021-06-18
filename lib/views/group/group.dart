@@ -38,30 +38,34 @@ class _GroupPageState extends State<GroupPage> with SingleTickerProviderStateMix
       appBar: AppBar(
         title: Text('小组'),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          AnimatedBuilder(
-            animation: _controller,
-            builder: (ctx, child) {
-              return Transform(
-                alignment: Alignment.center,
-                transform: Matrix4.rotationZ(_rotationAnim.value),
-                child: Icon(
-                  Icons.favorite,
-                  color: Colors.red,
-                  size: _sizeAnim.value,
-                )
-              );
-            },
-          ),
-          RaisedButton(
-            child: Icon(Icons.play_arrow),
-            onPressed: () {
-              _controller.forward();
-            },
-          ),
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          // crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            AnimatedBuilder(
+              animation: _controller,
+              builder: (ctx, child) {
+                return Transform(
+                  alignment: Alignment.center,
+                  transform: Matrix4.rotationZ(_rotationAnim.value),
+                  child: Icon(
+                    Icons.favorite,
+                    color: Colors.red,
+                    size: _sizeAnim.value,
+                  )
+                );
+              },
+            ),
+            RaisedButton(
+              child: Icon(Icons.play_arrow),
+              onPressed: () {
+                _controller.forward();
+                print(_controller.status);
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

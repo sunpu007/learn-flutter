@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
+        primaryColor: Colors.green
       ),
       routes: AppRouter.routers,
       initialRoute: AppRouter.initialRoute,
