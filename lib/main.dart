@@ -1,4 +1,7 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:myapp/utils/screen_fit.dart';
 import 'router/router.dart';
 import 'views/mall/mall.dart';
 import 'views/profile/profile.dart';
@@ -16,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
-        primaryColor: Colors.green
+        primaryColor: Colors.blue,
       ),
       routes: AppRouter.routers,
       initialRoute: AppRouter.initialRoute,
