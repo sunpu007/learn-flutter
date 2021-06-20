@@ -35,6 +35,6 @@ class ScreenFit {
   }
 
   static double rpx2Px(double rpx) {
-    return _rpx * rpx * 2;
+    return _px * rpx;
   }
 }
