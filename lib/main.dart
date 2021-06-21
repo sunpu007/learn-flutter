@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:myapp/utils/screen_fit.dart';
+import 'utils/screen_fit.dart';
 import 'router/router.dart';
 import 'views/mall/mall.dart';
 import 'views/profile/profile.dart';
@@ -14,6 +14,7 @@ main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    ScreenFit.initialize();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
