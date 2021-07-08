@@ -29,6 +29,10 @@ class HttpRequest {
 
     final Options options = Options(method: method, headers: headers,);
 
+    interceptors.add(inter);
+
+    _dio.interceptors.addAll(interceptors);
+
     try {
       Response response = await _dio.request<T>(url, queryParameters: params, options: options);
       return response.data;
